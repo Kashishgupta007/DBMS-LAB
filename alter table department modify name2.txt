@@ -28,3 +28,25 @@ insert into section(section_id, course_id, sec_id, semester, year) values (8, 'C
 
 8.To delete tuple:
 delete from table where condition;
+
+9.to create seq 
+create sequence emp_seq start with 1 increment by 1;
+
+10.to create table
+SQL> create table emp(emp_id int primary key,name varchar2(20), mobile int);
+
+11.to insert
+insert into emp(emp_id,name,mobile) values(emp_id.nextval,'xyz',9284890406);
+
+insert into emp values(emp_seq.nextval,'xyz2',9284890406);
+insert into emp values(emp_seq.nextval,'xyz3',9284890406);
+insert into emp values(emp_seq.nextval,'xyz4',9284890406);
+insert into emp values(emp_seq.nextval,'xyz5',9284890406);
+insert into emp values(emp_seq.nextval,'xyz6',9284890406);
+insert into emp values(emp_seq.nextval,'xyz7',9284890406);
+insert into emp values(emp_seq.nextval,'xyz8',9284890406);
+insert into emp(emp_seq,name,mobile) values(emp_seq.nextval,'xyz9',9284890406);
+
+
+12.how many id are there:
+select max(emp_id) from emp;
