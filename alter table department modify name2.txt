@@ -50,3 +50,442 @@ insert into emp(emp_seq,name,mobile) values(emp_seq.nextval,'xyz9',9284890406);
 
 12.how many id are there:
 select max(emp_id) from emp;
+
+13.rename
+rename emp to employee;
+
+14.to rename the table: rename emp to employee;
+to rename the field: alter table emp rename column mobile to mobilenumber;
+
+15.pin code add in table
+alter table employee add pincode number(6);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SQL*Plus: Release 11.2.0.4.0 Production on Thu Jan 29 14:21:50 2026
+
+Copyright (c) 1982, 2013, Oracle.  All rights reserved.
+
+Enter user-name: system
+Enter password:
+ERROR:
+ORA-01017: invalid username/password; logon denied
+
+
+Enter user-name: system
+Enter password:
+
+Connected to:
+Oracle Database 11g Enterprise Edition Release 11.2.0.4.0 - 64bit Production
+With the Partitioning, OLAP, Data Mining and Real Application Testing options
+
+SQL> select * from instructor;
+
+INSTRUCTOR_ID NAME                                                  DEPT_ID I
+------------- -------------------------------------------------- ---------- -
+    SALARY
+----------
+            1 John Doe                                                    1 Y
+     80000
+
+            2 Jane Smith                                                  1 N
+     75000
+
+            3 Bob Johnson                                                 2 Y
+     82000
+
+
+INSTRUCTOR_ID NAME                                                  DEPT_ID I
+------------- -------------------------------------------------- ---------- -
+    SALARY
+----------
+            4 Alice Brown                                                 2 N
+     76000
+
+            5 Charlie Davis                                               3 Y
+     81000
+
+            6 Eva Wilson                                                  3 N
+     77000
+
+
+INSTRUCTOR_ID NAME                                                  DEPT_ID I
+------------- -------------------------------------------------- ---------- -
+    SALARY
+----------
+            7 Frank Miller                                                4 Y
+     79000
+
+
+7 rows selected.
+
+SQL> create sequence emp_seq start with 1 increment by 1;
+
+Sequence created.
+
+SQL> create table emp(emp_id int primary key,name varchar2(20), mobile int);
+
+Table created.
+
+SQL> insert into emp(emp_id,name,mobile) values(emp_id.nextval,'xyz',9284890406);
+insert into emp(emp_id,name,mobile) values(emp_id.nextval,'xyz',9284890406)
+                                           *
+ERROR at line 1:
+ORA-02289: sequence does not exist
+
+
+SQL> insert into emp(emp_id,name,mobile) values(emp_seq.nextval,'xyz',9284890406);
+
+1 row created.
+
+SQL> insert into emp values(emp_id.nextval,'xyz2',9284890406);
+insert into emp values(emp_id.nextval,'xyz2',9284890406)
+                       *
+ERROR at line 1:
+ORA-02289: sequence does not exist
+
+
+SQL> insert into emp values(emp_id.nextval,'xyz3',9284890406);
+insert into emp values(emp_id.nextval,'xyz3',9284890406)
+                       *
+ERROR at line 1:
+ORA-02289: sequence does not exist
+
+
+SQL> insert into emp values(emp_id.nextval,'xyz4',9284890406);
+insert into emp values(emp_id.nextval,'xyz4',9284890406)
+                       *
+ERROR at line 1:
+ORA-02289: sequence does not exist
+
+
+SQL> insert into emp values(emp_id.nextval,'xyz5',9284890406);
+insert into emp values(emp_id.nextval,'xyz5',9284890406)
+                       *
+ERROR at line 1:
+ORA-02289: sequence does not exist
+
+
+SQL> insert into emp values(emp_id.nextval,'xyz6',9284890406);
+insert into emp values(emp_id.nextval,'xyz6',9284890406)
+                       *
+ERROR at line 1:
+ORA-02289: sequence does not exist
+
+
+SQL> insert into emp values(emp_id.nextval,'xyz7',9284890406);
+insert into emp values(emp_id.nextval,'xyz7',9284890406)
+                       *
+ERROR at line 1:
+ORA-02289: sequence does not exist
+
+
+SQL> insert into emp values(emp_id.nextval,'xyz8',9284890406);
+insert into emp values(emp_id.nextval,'xyz8',9284890406)
+                       *
+ERROR at line 1:
+ORA-02289: sequence does not exist
+
+
+SQL> insert into emp(emp_id,name,mobile) values(emp_id.nextval,'xyz9',9284890406);
+insert into emp(emp_id,name,mobile) values(emp_id.nextval,'xyz9',9284890406)
+                                           *
+ERROR at line 1:
+ORA-02289: sequence does not exist
+
+
+SQL>
+SQL> insert into emp values(emp_seq.nextval,'xyz2',9284890406);
+
+1 row created.
+
+SQL> insert into emp values(emp_seq.nextval,'xyz3',9284890406);
+
+1 row created.
+
+SQL> insert into emp values(emp_seq.nextval,'xyz4',9284890406);
+
+1 row created.
+
+SQL> insert into emp values(emp_seq.nextval,'xyz5',9284890406);
+
+1 row created.
+
+SQL> insert into emp values(emp_seq.nextval,'xyz6',9284890406);
+
+1 row created.
+
+SQL> insert into emp values(emp_seq.nextval,'xyz7',9284890406);
+
+1 row created.
+
+SQL> insert into emp values(emp_seq.nextval,'xyz8',9284890406);
+
+1 row created.
+
+SQL> insert into emp(emp_seq,name,mobile) values(emp_id.nextval,'xyz9',9284890406);
+insert into emp(emp_seq,name,mobile) values(emp_id.nextval,'xyz9',9284890406)
+                                            *
+ERROR at line 1:
+ORA-02289: sequence does not exist
+
+
+SQL> insert into emp values(emp_seq.nextval,'xyz2',9284890406);
+
+1 row created.
+
+SQL> insert into emp values(emp_seq.nextval,'xyz3',9284890406);
+
+1 row created.
+
+SQL> insert into emp values(emp_seq.nextval,'xyz4',9284890406);
+
+1 row created.
+
+SQL> insert into emp values(emp_seq.nextval,'xyz5',9284890406);
+
+1 row created.
+
+SQL> insert into emp values(emp_seq.nextval,'xyz6',9284890406);
+
+1 row created.
+
+SQL> insert into emp values(emp_seq.nextval,'xyz7',9284890406);
+
+1 row created.
+
+SQL> insert into emp values(emp_seq.nextval,'xyz8',9284890406);
+
+1 row created.
+
+SQL> insert into emp(emp_seq,name,mobile) values(emp_seq.nextval,'xyz9',9284890406);
+insert into emp(emp_seq,name,mobile) values(emp_seq.nextval,'xyz9',9284890406)
+                *
+ERROR at line 1:
+ORA-00904: "EMP_SEQ": invalid identifier
+
+
+SQL> select max(emp_id) from emp;
+
+MAX(EMP_ID)
+-----------
+         15
+
+SQL> select * from emp_seq;
+select * from emp_seq
+              *
+ERROR at line 1:
+ORA-02201: sequence not allowed here
+
+
+SQL> select * from emp;
+
+    EMP_ID NAME                     MOBILE
+---------- -------------------- ----------
+         1 xyz                  9284890406
+         2 xyz2                 9284890406
+         3 xyz3                 9284890406
+         4 xyz4                 9284890406
+         5 xyz5                 9284890406
+         6 xyz6                 9284890406
+         7 xyz7                 9284890406
+         8 xyz8                 9284890406
+         9 xyz2                 9284890406
+        10 xyz3                 9284890406
+        11 xyz4                 9284890406
+
+    EMP_ID NAME                     MOBILE
+---------- -------------------- ----------
+        12 xyz5                 9284890406
+        13 xyz6                 9284890406
+        14 xyz7                 9284890406
+        15 xyz8                 9284890406
+
+15 rows selected.
+
+SQL> create sequence emp1 start with 22 increment by 1;
+
+Sequence created.
+
+SQL> insert into emp(emp_id,name,mobile) values(emp_id.nextval,'xyz',9284890406);
+insert into emp(emp_id,name,mobile) values(emp_id.nextval,'xyz',9284890406)
+                                           *
+ERROR at line 1:
+ORA-02289: sequence does not exist
+
+
+SQL> insert into emp(emp_id,name,mobile) values(emp_seq.nextval,'xyz',9284890406);
+
+1 row created.
+
+SQL> insert into emp(emp_id,name,mobile) values(emp1.nextval,'xyz',9284890406);
+
+1 row created.
+
+SQL> select * from emp;
+
+    EMP_ID NAME                     MOBILE
+---------- -------------------- ----------
+         1 xyz                  9284890406
+         2 xyz2                 9284890406
+         3 xyz3                 9284890406
+         4 xyz4                 9284890406
+         5 xyz5                 9284890406
+         6 xyz6                 9284890406
+         7 xyz7                 9284890406
+         8 xyz8                 9284890406
+         9 xyz2                 9284890406
+        10 xyz3                 9284890406
+        11 xyz4                 9284890406
+
+    EMP_ID NAME                     MOBILE
+---------- -------------------- ----------
+        12 xyz5                 9284890406
+        13 xyz6                 9284890406
+        14 xyz7                 9284890406
+        15 xyz8                 9284890406
+        16 xyz                  9284890406
+        22 xyz                  9284890406
+
+17 rows selected.
+
+SQL>
+SQL> rename emp to employee;
+
+Table renamed.
+
+SQL> to rename the field: alter table emp rename column mobile to mobilenumber;
+SP2-0734: unknown command beginning "to rename ..." - rest of line ignored.
+SQL> alter table emp rename column mobile to mobilenumber;
+alter table emp rename column mobile to mobilenumber
+*
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> select * from emp;
+select * from emp
+              *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> select * from employee;
+
+    EMP_ID NAME                     MOBILE
+---------- -------------------- ----------
+         1 xyz                  9284890406
+         2 xyz2                 9284890406
+         3 xyz3                 9284890406
+         4 xyz4                 9284890406
+         5 xyz5                 9284890406
+         6 xyz6                 9284890406
+         7 xyz7                 9284890406
+         8 xyz8                 9284890406
+         9 xyz2                 9284890406
+        10 xyz3                 9284890406
+        11 xyz4                 9284890406
+
+    EMP_ID NAME                     MOBILE
+---------- -------------------- ----------
+        12 xyz5                 9284890406
+        13 xyz6                 9284890406
+        14 xyz7                 9284890406
+        15 xyz8                 9284890406
+        16 xyz                  9284890406
+        22 xyz                  9284890406
+
+17 rows selected.
+
+SQL> alter table employee add pincode number(6) not null;
+alter table employee add pincode number(6) not null
+            *
+ERROR at line 1:
+ORA-01758: table must be empty to add mandatory (NOT NULL) column
+
+
+SQL> alter table employee add pincode number(6);
+
+Table altered.
+
+SQL> select * from employee;
+
+    EMP_ID NAME                     MOBILE    PINCODE
+---------- -------------------- ---------- ----------
+         1 xyz                  9284890406
+         2 xyz2                 9284890406
+         3 xyz3                 9284890406
+         4 xyz4                 9284890406
+         5 xyz5                 9284890406
+         6 xyz6                 9284890406
+         7 xyz7                 9284890406
+         8 xyz8                 9284890406
+         9 xyz2                 9284890406
+        10 xyz3                 9284890406
+        11 xyz4                 9284890406
+
+    EMP_ID NAME                     MOBILE    PINCODE
+---------- -------------------- ---------- ----------
+        12 xyz5                 9284890406
+        13 xyz6                 9284890406
+        14 xyz7                 9284890406
+        15 xyz8                 9284890406
+        16 xyz                  9284890406
+        22 xyz                  9284890406
+
+17 rows selected.
+
+SQL> truncate table employee
+  2  truncate table employee;
+truncate table employee
+*
+ERROR at line 2:
+ORA-03291: Invalid truncate option - missing STORAGE keyword
+
+
+SQL> truncate table employee;
+
+Table truncated.
+
+SQL> select * from employee;
+
+no rows selected
+
+SQL> alter table employee add pincode number not null;
+alter table employee add pincode number not null
+                         *
+ERROR at line 1:
+ORA-01430: column being added already exists in table
+
+
+SQL> select * from employee;
+
+no rows selected
+
+SQL> desc employee;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EMP_ID                                    NOT NULL NUMBER(38)
+ NAME                                               VARCHAR2(20)
+ MOBILE                                             NUMBER(38)
+ PINCODE                                            NUMBER(6)
+
+SQL>
