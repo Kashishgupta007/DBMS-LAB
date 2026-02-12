@@ -60,5 +60,8 @@ select emp_no, first_name, salary from emp where salary=(select max(salary) from
 select first_name, salary from emp where lower(job)='clerk' and salary>(select salary from emp where lower(first_name)='bob') and salary<(select salary from emp where lower(first_name)='james');
 
 8.display the name of the employees who earn highest salary in their respective department
-select e.first_name, e.salary, d.dept_name from emp e join departments d on e.deptno=d.deptno where e.salary=(select max(salary) from emp where deptno=e.deptno);
+A. select e.first_name, e.salary, d.dept_name from emp e join departments d on e.deptno=d.deptno where e.salary=(select max(salary) from emp where deptno=e.deptno);
+B. select i.first_name, i.last_name, i.salary from emp i where i.salary = (select max (i2.salary) from emp i2.deptno=i.deptno);
+
+9.display those empoylees who are working as in same department where his manager is working 
 
